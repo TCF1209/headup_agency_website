@@ -40,10 +40,11 @@ export function Navbar() {
     href === "/" ? pathname === "/" : pathname.startsWith(href);
 
   return (
-    <motion.header
-      style={{ backgroundColor: bg }}
-      className="fixed inset-x-0 top-0 z-50 backdrop-blur-md"
-    >
+    <>
+      <motion.header
+        style={{ backgroundColor: bg }}
+        className="fixed inset-x-0 top-0 z-40 backdrop-blur-md"
+      >
       <motion.div
         style={{ opacity: borderOpacity }}
         className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-dark-border"
@@ -90,6 +91,7 @@ export function Navbar() {
           </button>
         </div>
       </nav>
+      </motion.header>
 
       <AnimatePresence>
         {open && (
@@ -98,7 +100,8 @@ export function Navbar() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", stiffness: 280, damping: 28 }}
-            className="fixed inset-0 z-50 flex flex-col bg-dark-primary md:hidden"
+            style={{ backgroundColor: "#1A1A1A" }}
+            className="fixed inset-0 z-[60] flex flex-col md:hidden"
           >
             <div className="flex items-center justify-between px-6 py-4">
               <Image
@@ -140,6 +143,6 @@ export function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </>
   );
 }
