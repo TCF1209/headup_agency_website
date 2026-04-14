@@ -26,6 +26,46 @@
       "clients": "Pelanggan Dilayan",
       "revenue": "Pendapatan Dijana",
       "rating": "Penilaian Purata"
+    },
+    "services": {
+      "label": "// APA KAMI LAKUKAN",
+      "title": "Dua fokus. Kedua-duanya F&B.",
+      "grabfood": {
+        "title": "Pemasaran GrabFood & Foodpanda",
+        "description": "Optimasi menu, kempen, pengurusan penilaian, belanja iklan — dari hujung ke hujung."
+      },
+      "pos": {
+        "title": "Penyelesaian Sistem POS",
+        "description": "Perkakasan, perisian, latihan staf, sokongan berterusan. Integrasi dengan aplikasi penghantaran."
+      }
+    },
+    "cases": {
+      "label": "// KAJIAN KES",
+      "title": "Hasil yang bercakap.",
+      "viewAll": "Lihat Semua Kes"
+    },
+    "testimonials": {
+      "label": "// SUARA KLIEN",
+      "title": "Kata pengusaha."
+    },
+    "why": {
+      "label": "// KENAPA HEAD UP",
+      "title": "Bukan agensi umum.",
+      "specialists": {
+        "title": "Pakar F&B",
+        "description": "Kami hanya bekerja dalam bidang yang kami kuasai — restoran, kafe, penjaja, dapur awan."
+      },
+      "data": {
+        "title": "Berpandukan Data",
+        "description": "Setiap keputusan disokong angka. Belanja iklan dijustifikasikan baris demi baris."
+      },
+      "endToEnd": {
+        "title": "Hujung ke Hujung",
+        "description": "Dari permulaan ke pengoptimuman berterusan. Tanpa serahan terputus."
+      }
+    },
+    "ctaBanner": {
+      "headline": "Bersedia kembangkan perniagaan F&B anda?"
     }
   },
   "thankYou": {

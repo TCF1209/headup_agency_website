@@ -26,6 +26,46 @@
       "clients": "服务客户",
       "revenue": "创造营收",
       "rating": "平均评分"
+    },
+    "services": {
+      "label": "// 我们的业务",
+      "title": "两大核心 · 专注餐饮。",
+      "grabfood": {
+        "title": "GrabFood 与 Foodpanda 营销",
+        "description": "菜单优化、活动设置、评价管理、广告投放 — 全程托管。"
+      },
+      "pos": {
+        "title": "POS 系统方案",
+        "description": "硬件、软件、员工培训、持续支援。与外送平台无缝整合。"
+      }
+    },
+    "cases": {
+      "label": "// 成功案例",
+      "title": "成绩说明一切。",
+      "viewAll": "查看全部案例"
+    },
+    "testimonials": {
+      "label": "// 客户声音",
+      "title": "业者怎么说。"
+    },
+    "why": {
+      "label": "// 为何选我们",
+      "title": "不是综合型机构。",
+      "specialists": {
+        "title": "餐饮专家",
+        "description": "只服务我们熟悉的领域 — 餐厅、咖啡馆、小贩、云厨房。"
+      },
+      "data": {
+        "title": "数据驱动",
+        "description": "每个决策都有数据支撑。广告预算逐项交代。"
+      },
+      "endToEnd": {
+        "title": "端到端服务",
+        "description": "从接入到持续优化。没有交接断层。"
+      }
+    },
+    "ctaBanner": {
+      "headline": "准备好让您的餐饮业务增长了吗?"
     }
   },
   "thankYou": {

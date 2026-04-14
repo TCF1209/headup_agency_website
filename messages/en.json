@@ -26,6 +26,46 @@
       "clients": "Clients Served",
       "revenue": "Revenue Generated",
       "rating": "Average Rating"
+    },
+    "services": {
+      "label": "// WHAT WE DO",
+      "title": "Two focuses. Both F&B.",
+      "grabfood": {
+        "title": "GrabFood & Foodpanda Marketing",
+        "description": "Menu optimisation, campaign setup, rating management, ad spend — end to end."
+      },
+      "pos": {
+        "title": "POS System Solutions",
+        "description": "Hardware, software, staff training, ongoing support. Integrates with delivery apps."
+      }
+    },
+    "cases": {
+      "label": "// CASE STUDIES",
+      "title": "Results that speak.",
+      "viewAll": "See All Case Studies"
+    },
+    "testimonials": {
+      "label": "// CLIENT VOICES",
+      "title": "What operators say."
+    },
+    "why": {
+      "label": "// WHY HEAD UP",
+      "title": "Not a general agency.",
+      "specialists": {
+        "title": "F&B Specialists",
+        "description": "We only work with what we know — restaurants, cafés, hawkers, cloud kitchens."
+      },
+      "data": {
+        "title": "Data-Driven",
+        "description": "Every decision backed by numbers. Ad spend justified line by line."
+      },
+      "endToEnd": {
+        "title": "End-to-End",
+        "description": "From onboarding to ongoing optimisation. No handoffs, no drop-offs."
+      }
+    },
+    "ctaBanner": {
+      "headline": "Ready to grow your F&B business?"
     }
   },
   "thankYou": {
