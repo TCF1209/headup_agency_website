@@ -17,6 +17,22 @@ import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { InquiryTrigger } from "@/components/InquiryTrigger";
+import { pageMetadata } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return pageMetadata({
+    locale,
+    path: "/services",
+    title: "Services — GrabFood & Foodpanda Marketing, POS Solutions",
+    description:
+      "Menu optimisation, ad spend management, POS installation and training. Specialist F&B services in Malaysia.",
+  });
+}
 
 const GRABFOOD_INCLUDES: { icon: LucideIcon; label: string }[] = [
   { icon: FileText, label: "Menu optimisation" },

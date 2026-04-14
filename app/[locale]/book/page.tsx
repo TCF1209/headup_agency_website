@@ -1,5 +1,21 @@
 import { setRequestLocale } from "next-intl/server";
 import { BookingForm } from "@/components/BookingForm";
+import { pageMetadata } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return pageMetadata({
+    locale,
+    path: "/book",
+    title: "Book a Free Consultation — Head Up Agency",
+    description:
+      "30-minute consultation with F&B digital specialists. No commitment, specific recommendations.",
+  });
+}
 
 export default function BookPage({
   params,

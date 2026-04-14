@@ -4,6 +4,22 @@ import { VideoCard } from "@/components/VideoCard";
 import { InquiryTrigger } from "@/components/InquiryTrigger";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
+import { pageMetadata } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return pageMetadata({
+    locale,
+    path: "/solutions",
+    title: "Case Studies & Client Stories — Head Up Agency",
+    description:
+      "Real F&B problems, real solutions, real results. Case studies, client videos, and testimonials.",
+  });
+}
 
 // TODO: replace placeholders with real entries from Sanity
 const CASE_STUDIES = [

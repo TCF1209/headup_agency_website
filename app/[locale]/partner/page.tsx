@@ -1,6 +1,22 @@
 import { Award, TrendingUp, ShieldCheck, Users } from "lucide-react";
 import { setRequestLocale } from "next-intl/server";
 import { PartnerForm } from "@/components/PartnerForm";
+import { pageMetadata } from "@/lib/seo";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return pageMetadata({
+    locale,
+    path: "/partner",
+    title: "Partner Programme — Head Up Agency",
+    description:
+      "Become an authorised Head Up partner. Recurring commissions, co-branded assets, joint pitches.",
+  });
+}
 
 // TODO: replace with real partner-programme copy
 const BENEFITS = [
