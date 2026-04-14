@@ -4,6 +4,8 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { Syne, DM_Sans, JetBrains_Mono, Noto_Sans_SC } from "next/font/google";
 import { routing } from "@/i18n/routing";
+import { Navbar } from "@/components/Navbar";
+import { Footer } from "@/components/Footer";
 import "../globals.css";
 
 const syne = Syne({
@@ -60,7 +62,11 @@ export default async function LocaleLayout({
       <body
         className={`bg-dark-primary text-white antialiased ${locale === "zh" ? "font-cjk" : "font-sans"}`}
       >
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
