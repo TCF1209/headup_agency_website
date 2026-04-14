@@ -1,5 +1,65 @@
 import { setRequestLocale } from "next-intl/server";
-import { PageStub } from "@/components/PageStub";
+import { TestimonialCard } from "@/components/TestimonialCard";
+import { VideoCard } from "@/components/VideoCard";
+import { InquiryTrigger } from "@/components/InquiryTrigger";
+import { Link } from "@/i18n/navigation";
+import { ArrowRight } from "lucide-react";
+
+// TODO: replace placeholders with real entries from Sanity
+const CASE_STUDIES = [
+  {
+    client: "Hawker Stall · Klang Valley",
+    problem: "Low visibility on GrabFood, averaging 20 orders/day.",
+    solution:
+      "Full menu redesign + promotional campaign + ad spend management across both GrabFood and Foodpanda.",
+    results: ["+280% orders in 60 days", "RM 45,000 additional revenue", "4.7★ avg rating (from 3.9★)"],
+  },
+  {
+    client: "Café · Petaling Jaya",
+    problem: "Consistent 4.1★ rating dragging discovery; stale 45-item menu.",
+    solution:
+      "Trimmed menu to 22 high-margin items, launched a weekend-only campaign, trained staff on review-response SOP.",
+    results: ["4.1★ → 4.8★ in 90 days", "+110% weekend orders", "Top-20 discovery in zone"],
+  },
+  {
+    client: "Cloud Kitchen · KL",
+    problem: "POS choking at peak; orders missed; staff reconciling manually.",
+    solution:
+      "Migrated to integrated POS with GrabFood/Foodpanda sync, trained 8 staff, established monthly reporting cadence.",
+    results: ["Zero missed orders / month", "RM 45K recovered / month", "2h admin time saved daily"],
+  },
+];
+
+// TODO: replace with real testimonial videos
+const VIDEOS = [
+  { title: "Hawker stall +280% orders", caption: "Klang Valley · 60 days", youtubeId: "dQw4w9WgXcQ" },
+  { title: "Café rating 4.1 → 4.8", caption: "Petaling Jaya · 90 days", youtubeId: "dQw4w9WgXcQ" },
+  { title: "Cloud kitchen POS migration", caption: "Kuala Lumpur", youtubeId: "dQw4w9WgXcQ" },
+];
+
+// TODO: replace with real quotes
+const QUOTES = [
+  {
+    name: "Ahmad",
+    business: "Restaurant · Shah Alam",
+    quote: "Our GrabFood orders tripled in under two months. The menu rework alone paid for itself.",
+  },
+  {
+    name: "Mei Ling",
+    business: "Café · Cheras",
+    quote: "Clear strategy, sharp execution. They know F&B in a way other agencies don't.",
+  },
+  {
+    name: "Rizal",
+    business: "Cloud Kitchen · KL",
+    quote: "The POS migration was painless. Staff picked it up in a day. Ongoing support is real.",
+  },
+  {
+    name: "Suraya",
+    business: "Hawker · Ampang",
+    quote: "They speak operator, not agency. First proposal had actual numbers, not buzzwords.",
+  },
+];
 
 export default function SolutionsPage({
   params,
@@ -7,10 +67,119 @@ export default function SolutionsPage({
   params: { locale: string };
 }) {
   setRequestLocale(params.locale);
+
   return (
-    <PageStub
-      title="Real problems. Real solutions."
-      subtitle="Case studies and client testimonials — in progress."
-    />
+    <main className="bg-dark-primary pt-28">
+      <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+        <p className="mb-4 font-mono text-xs uppercase tracking-widest text-accent">
+          {"// SOLUTIONS"}
+        </p>
+        <h1 className="max-w-5xl font-display text-5xl font-bold leading-[0.95] tracking-tight text-white md:text-8xl">
+          Real problems. Real solutions. Real results.
+        </h1>
+      </div>
+
+      <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+        <p className="mb-10 font-mono text-xs uppercase tracking-wider text-muted">
+          {"// CASE STUDIES"}
+        </p>
+        <div className="flex flex-col gap-6">
+          {CASE_STUDIES.map((c, i) => (
+            <article
+              key={i}
+              className="grid gap-8 rounded-md border border-dark-border bg-dark-surface p-8 md:grid-cols-[1fr_2fr] md:gap-12 md:p-12"
+            >
+              <div>
+                <p className="font-mono text-xs uppercase tracking-wider text-accent">
+                  {`0${i + 1} / 0${CASE_STUDIES.length}`}
+                </p>
+                <p className="mt-3 font-mono text-sm uppercase tracking-wider text-offwhite">
+                  {c.client}
+                </p>
+              </div>
+              <div className="flex flex-col gap-8">
+                <Block label="Problem" body={c.problem} />
+                <Block label="Solution" body={c.solution} />
+                <div>
+                  <p className="mb-3 font-mono text-xs uppercase tracking-wider text-muted">
+                    Results
+                  </p>
+                  <div className="grid gap-3 sm:grid-cols-3">
+                    {c.results.map((r) => (
+                      <div
+                        key={r}
+                        className="rounded border-l-2 border-accent bg-dark-primary px-4 py-3 font-display text-lg font-bold leading-tight text-white"
+                      >
+                        {r}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+        <p className="mb-4 font-mono text-xs uppercase tracking-wider text-muted">
+          {"// CLIENT STORIES"}
+        </p>
+        <h2 className="max-w-2xl font-display text-4xl font-bold leading-[1] tracking-tight text-white md:text-6xl">
+          Watch operators tell it themselves.
+        </h2>
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {VIDEOS.map((v, i) => (
+            <VideoCard key={i} {...v} index={i} />
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+        <p className="mb-4 font-mono text-xs uppercase tracking-wider text-muted">
+          {"// TESTIMONIALS"}
+        </p>
+        <h2 className="max-w-2xl font-display text-4xl font-bold leading-[1] tracking-tight text-white md:text-6xl">
+          What they said after.
+        </h2>
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
+          {QUOTES.map((q, i) => (
+            <TestimonialCard key={q.name} {...q} index={i} />
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+        <div className="rounded-md bg-dark-surface p-10 text-center md:p-16">
+          <h2 className="mx-auto max-w-3xl font-display text-3xl font-bold leading-[1.05] tracking-tight text-white md:text-5xl">
+            Want results like these? Start with 30 minutes.
+          </h2>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Link
+              href="/book"
+              className="group inline-flex items-center gap-2 rounded-md bg-accent px-6 py-4 font-mono text-sm font-medium uppercase tracking-wider text-dark-primary transition-all hover:scale-[1.03] hover:bg-accent-muted"
+            >
+              Book a consultant
+              <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+            </Link>
+            <InquiryTrigger className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-white/80 px-6 py-4 font-mono text-sm font-medium uppercase tracking-wider text-white transition-colors hover:text-dark-primary">
+              <span className="absolute inset-0 origin-left scale-x-0 bg-white transition-transform duration-200 group-hover:scale-x-100" />
+              <span className="relative">Send an inquiry</span>
+            </InquiryTrigger>
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
+
+function Block({ label, body }: { label: string; body: string }) {
+  return (
+    <div>
+      <p className="mb-2 font-mono text-xs uppercase tracking-wider text-muted">
+        {label}
+      </p>
+      <p className="text-lg text-white md:text-xl">{body}</p>
+    </div>
   );
 }

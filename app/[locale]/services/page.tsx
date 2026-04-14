@@ -1,5 +1,84 @@
+import {
+  ArrowRight,
+  BarChart3,
+  Cpu,
+  FileText,
+  Headphones,
+  Link as LinkIcon,
+  MessageSquare,
+  Settings,
+  Star,
+  Target,
+  TrendingUp,
+  Users,
+  type LucideIcon,
+} from "lucide-react";
 import { setRequestLocale } from "next-intl/server";
-import { PageStub } from "@/components/PageStub";
+import { Link } from "@/i18n/navigation";
+import { FaqAccordion } from "@/components/FaqAccordion";
+import { InquiryTrigger } from "@/components/InquiryTrigger";
+
+const GRABFOOD_INCLUDES: { icon: LucideIcon; label: string }[] = [
+  { icon: FileText, label: "Menu optimisation" },
+  { icon: Target, label: "Promotional campaigns" },
+  { icon: Star, label: "Rating & review management" },
+  { icon: BarChart3, label: "Sales analytics & reporting" },
+  { icon: TrendingUp, label: "Ad spend management" },
+];
+
+const POS_INCLUDES: { icon: LucideIcon; label: string }[] = [
+  { icon: Cpu, label: "POS hardware setup" },
+  { icon: Settings, label: "Software configuration" },
+  { icon: Users, label: "Staff training" },
+  { icon: Headphones, label: "Ongoing support" },
+  { icon: LinkIcon, label: "GrabFood/Foodpanda integration" },
+];
+
+const GRABFOOD_FAQS = [
+  {
+    q: "How long until I see results?",
+    a: "Most clients see meaningful order lift within 30–45 days. Menu and pricing changes move fast; ad spend scales from there.",
+  },
+  {
+    q: "Do you handle the ad budget?",
+    a: "Yes — we manage your GrabFood and Foodpanda ad spend with monthly reports breaking down cost per order, not just impressions.",
+  },
+  {
+    q: "What if my food photos aren't great?",
+    a: "We arrange a shoot or work with existing assets. Good photography lifts conversion 20–40% on most menus.",
+  },
+  {
+    q: "Can you manage negative reviews?",
+    a: "We respond within 24h on your behalf, flag pattern complaints, and push operational fixes back to your team.",
+  },
+  {
+    q: "Is there a minimum contract?",
+    a: "3 months. Enough time for campaigns to produce data, not so long that we can hide behind a contract.",
+  },
+];
+
+const POS_FAQS = [
+  {
+    q: "Which POS brands do you work with?",
+    a: "We're hardware-agnostic. We'll recommend based on your menu size, delivery mix, and existing setup — not a brand kickback.",
+  },
+  {
+    q: "How long does installation take?",
+    a: "A single-outlet installation typically takes one business day, including staff training and live test orders.",
+  },
+  {
+    q: "Do you integrate with GrabFood and Foodpanda?",
+    a: "Yes — every system we deploy auto-syncs orders from delivery platforms so your kitchen and back-of-house stay in one queue.",
+  },
+  {
+    q: "What about support after install?",
+    a: "Included for the first 90 days. Extended support available by tier — see your quote.",
+  },
+  {
+    q: "Can you migrate my existing sales data?",
+    a: "Yes, if your current system exports it. We'll confirm feasibility in the audit call before quoting.",
+  },
+];
 
 export default function ServicesPage({
   params,
@@ -7,10 +86,171 @@ export default function ServicesPage({
   params: { locale: string };
 }) {
   setRequestLocale(params.locale);
+
   return (
-    <PageStub
-      title="Services"
-      subtitle="GrabFood & Foodpanda marketing + POS solutions — detailed page in progress."
-    />
+    <main className="bg-dark-primary pt-28">
+      <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+        <p className="mb-4 font-mono text-xs uppercase tracking-widest text-accent">
+          {"// SERVICES"}
+        </p>
+        <h1 className="max-w-4xl font-display text-5xl font-bold leading-[0.95] tracking-tight text-white md:text-7xl">
+          Two focuses. Both F&amp;B. Done properly.
+        </h1>
+      </div>
+
+      <ServiceBlock
+        id="grabfood"
+        label="// 01 · DELIVERY MARKETING"
+        title="GrabFood & Foodpanda Marketing"
+        subtitle="Orders, ratings, and ad efficiency — managed end to end."
+        includes={GRABFOOD_INCLUDES}
+        faqs={GRABFOOD_FAQS}
+        ctaLabel="Book a free consultation"
+        ctaHref="/book"
+      />
+
+      <div className="border-t border-dark-border" />
+
+      <ServiceBlock
+        id="pos"
+        label="// 02 · POS SOLUTIONS"
+        title="POS System Solutions"
+        subtitle="Hardware, software, training, support — integrated with delivery."
+        includes={POS_INCLUDES}
+        faqs={POS_FAQS}
+        ctaLabel="Get a quote"
+        ctaHref="/book"
+        inverse
+      />
+    </main>
+  );
+}
+
+function ServiceBlock({
+  id,
+  label,
+  title,
+  subtitle,
+  includes,
+  faqs,
+  ctaLabel,
+  ctaHref,
+  inverse = false,
+}: {
+  id: string;
+  label: string;
+  title: string;
+  subtitle: string;
+  includes: { icon: LucideIcon; label: string }[];
+  faqs: { q: string; a: string }[];
+  ctaLabel: string;
+  ctaHref: string;
+  inverse?: boolean;
+}) {
+  const steps = [
+    { n: "01", t: "Audit", d: "Current state, operational gaps, ad baseline." },
+    { n: "02", t: "Strategy", d: "Menu, pricing, campaign calendar, budget plan." },
+    { n: "03", t: "Execute", d: "Weekly reporting, monthly reviews, fast iteration." },
+  ];
+
+  return (
+    <section id={id} className="relative py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="grid gap-10 md:grid-cols-[1fr_1.2fr] md:gap-16">
+          <div>
+            <p className="mb-4 font-mono text-xs uppercase tracking-widest text-accent">
+              {label}
+            </p>
+            <h2 className="font-display text-4xl font-bold leading-[1] tracking-tight text-white md:text-6xl">
+              {title}
+            </h2>
+            <p className="mt-6 max-w-md text-offwhite md:text-lg">{subtitle}</p>
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href={ctaHref}
+                className="group inline-flex items-center justify-center gap-2 rounded-md bg-accent px-6 py-4 font-mono text-sm font-medium uppercase tracking-wider text-dark-primary transition-all hover:scale-[1.03] hover:bg-accent-muted"
+              >
+                {ctaLabel}
+                <ArrowRight
+                  size={16}
+                  className="transition-transform group-hover:translate-x-1"
+                />
+              </Link>
+              <InquiryTrigger className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-white/80 px-6 py-4 font-mono text-sm font-medium uppercase tracking-wider text-white transition-colors hover:text-dark-primary">
+                <span className="absolute inset-0 origin-left scale-x-0 bg-white transition-transform duration-200 group-hover:scale-x-100" />
+                <span className="relative">Ask a question</span>
+              </InquiryTrigger>
+            </div>
+          </div>
+
+          <div>
+            <p className="mb-4 font-mono text-xs uppercase tracking-wider text-muted">
+              {"// WHAT'S INCLUDED"}
+            </p>
+            <ul
+              className={`grid grid-cols-1 gap-3 sm:grid-cols-2 ${inverse ? "" : ""}`}
+            >
+              {includes.map(({ icon: Icon, label: l }) => (
+                <li
+                  key={l}
+                  className="flex items-center gap-3 rounded-md border border-dark-border bg-dark-surface p-4"
+                >
+                  <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded border border-dark-border text-accent">
+                    <Icon size={18} />
+                  </span>
+                  <span className="text-sm text-offwhite">{l}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-24">
+          <p className="mb-4 font-mono text-xs uppercase tracking-wider text-muted">
+            {"// HOW IT WORKS"}
+          </p>
+          <div className="grid gap-6 md:grid-cols-3">
+            {steps.map((s, i) => (
+              <div
+                key={s.n}
+                className="relative rounded-md border border-dark-border bg-dark-surface p-8"
+              >
+                <div className="font-display text-6xl font-bold text-accent">
+                  {s.n}
+                </div>
+                <h3 className="mt-4 font-display text-2xl font-bold text-white">
+                  {s.t}
+                </h3>
+                <p className="mt-2 text-sm text-offwhite">{s.d}</p>
+                {i < 2 && (
+                  <ArrowRight
+                    size={18}
+                    className="absolute -right-3 top-1/2 hidden -translate-y-1/2 rounded-full bg-dark-primary p-1 text-accent md:block"
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-24 grid gap-12 md:grid-cols-[1fr_1.2fr] md:gap-16">
+          <div>
+            <p className="mb-4 font-mono text-xs uppercase tracking-wider text-muted">
+              {"// FAQ"}
+            </p>
+            <h3 className="font-display text-3xl font-bold leading-tight tracking-tight text-white md:text-5xl">
+              Questions operators actually ask.
+            </h3>
+            <div className="mt-6 flex items-center gap-2">
+              <MessageSquare size={16} className="text-accent" />
+              <InquiryTrigger className="font-mono text-xs uppercase tracking-wider text-offwhite underline-offset-4 transition-colors hover:text-accent hover:underline">
+                Ask your own
+              </InquiryTrigger>
+            </div>
+          </div>
+          <FaqAccordion items={faqs} />
+        </div>
+      </div>
+    </section>
   );
 }
