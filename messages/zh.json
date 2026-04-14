@@ -1,0 +1,50 @@
+{
+  "nav": {
+    "home": "首页",
+    "services": "服务",
+    "solutions": "解决方案",
+    "book": "预约",
+    "careers": "招聘",
+    "partner": "合作"
+  },
+  "cta": {
+    "bookConsultant": "预约顾问",
+    "viewWork": "查看案例",
+    "sendInquiry": "发送咨询",
+    "learnMore": "了解更多",
+    "applyNow": "立即申请",
+    "getQuote": "获取报价"
+  },
+  "home": {
+    "hero": {
+      "label": "// 餐饮数字增长机构",
+      "headline": "助力餐饮业线上<accent>增长</accent>。",
+      "subheading": "GrabFood 与 Foodpanda 营销 · POS 系统方案 · 真实成效",
+      "scroll": "向下滚动"
+    },
+    "stats": {
+      "clients": "服务客户",
+      "revenue": "创造营收",
+      "rating": "平均评分"
+    }
+  },
+  "thankYou": {
+    "booking": "预约已送出!我们将在 24 小时内确认。",
+    "inquiry": "咨询已收到,我们将尽快与您联系。",
+    "application": "申请已提交,HR 团队将审阅并回复。"
+  },
+  "form": {
+    "fullName": "姓名",
+    "email": "电子邮箱",
+    "phone": "电话号码",
+    "businessName": "公司名称",
+    "message": "留言",
+    "submit": "提交",
+    "sending": "发送中...",
+    "errors": {
+      "required": "此栏为必填",
+      "email": "请输入有效的电子邮箱",
+      "phone": "请输入有效的马来西亚电话号码"
+    }
+  }
+}

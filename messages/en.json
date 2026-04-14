@@ -1,0 +1,50 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "solutions": "Solutions",
+    "book": "Book",
+    "careers": "Careers",
+    "partner": "Partner"
+  },
+  "cta": {
+    "bookConsultant": "Book a Consultant",
+    "viewWork": "View Our Work",
+    "sendInquiry": "Send an Inquiry",
+    "learnMore": "Learn More",
+    "applyNow": "Apply Now",
+    "getQuote": "Get a Quote"
+  },
+  "home": {
+    "hero": {
+      "label": "// F&B DIGITAL GROWTH AGENCY",
+      "headline": "We Help F&B Businesses <accent>Grow</accent> Online.",
+      "subheading": "GrabFood & Foodpanda Marketing · POS System Solutions · Real Results",
+      "scroll": "Scroll"
+    },
+    "stats": {
+      "clients": "Clients Served",
+      "revenue": "Revenue Generated",
+      "rating": "Average Rating"
+    }
+  },
+  "thankYou": {
+    "booking": "Booking request sent! We'll confirm within 24 hours.",
+    "inquiry": "Inquiry received. We'll be in touch shortly.",
+    "application": "Application submitted. Our HR team will review and reply."
+  },
+  "form": {
+    "fullName": "Full Name",
+    "email": "Email Address",
+    "phone": "Phone Number",
+    "businessName": "Business Name",
+    "message": "Message",
+    "submit": "Submit",
+    "sending": "Sending...",
+    "errors": {
+      "required": "This field is required",
+      "email": "Enter a valid email",
+      "phone": "Enter a valid Malaysian phone number"
+    }
+  }
+}

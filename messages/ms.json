@@ -1,0 +1,50 @@
+{
+  "nav": {
+    "home": "Laman Utama",
+    "services": "Perkhidmatan",
+    "solutions": "Penyelesaian",
+    "book": "Tempahan",
+    "careers": "Kerjaya",
+    "partner": "Rakan Kongsi"
+  },
+  "cta": {
+    "bookConsultant": "Tempah Perunding",
+    "viewWork": "Lihat Kerja Kami",
+    "sendInquiry": "Hantar Pertanyaan",
+    "learnMore": "Ketahui Lagi",
+    "applyNow": "Mohon Sekarang",
+    "getQuote": "Dapatkan Sebut Harga"
+  },
+  "home": {
+    "hero": {
+      "label": "// AGENSI PERTUMBUHAN DIGITAL F&B",
+      "headline": "Kami Bantu Perniagaan F&B <accent>Berkembang</accent> Dalam Talian.",
+      "subheading": "Pemasaran GrabFood & Foodpanda · Penyelesaian Sistem POS · Hasil Sebenar",
+      "scroll": "Skrol"
+    },
+    "stats": {
+      "clients": "Pelanggan Dilayan",
+      "revenue": "Pendapatan Dijana",
+      "rating": "Penilaian Purata"
+    }
+  },
+  "thankYou": {
+    "booking": "Permohonan tempahan dihantar! Kami akan sahkan dalam 24 jam.",
+    "inquiry": "Pertanyaan diterima. Kami akan menghubungi anda tidak lama lagi.",
+    "application": "Permohonan dihantar. Pasukan HR kami akan menyemak dan membalas."
+  },
+  "form": {
+    "fullName": "Nama Penuh",
+    "email": "Alamat Emel",
+    "phone": "Nombor Telefon",
+    "businessName": "Nama Perniagaan",
+    "message": "Mesej",
+    "submit": "Hantar",
+    "sending": "Menghantar...",
+    "errors": {
+      "required": "Medan ini diperlukan",
+      "email": "Masukkan emel yang sah",
+      "phone": "Masukkan nombor telefon Malaysia yang sah"
+    }
+  }
+}
