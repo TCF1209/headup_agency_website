@@ -6,6 +6,8 @@ import { Syne, DM_Sans, JetBrains_Mono, Noto_Sans_SC } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { InquiryProvider } from "@/components/InquiryDrawer";
+import { WhatsAppFab } from "@/components/WhatsAppFab";
 import "../globals.css";
 
 const syne = Syne({
@@ -63,9 +65,12 @@ export default async function LocaleLayout({
         className={`bg-dark-primary text-white antialiased ${locale === "zh" ? "font-cjk" : "font-sans"}`}
       >
         <NextIntlClientProvider>
-          <Navbar />
-          {children}
-          <Footer />
+          <InquiryProvider>
+            <Navbar />
+            {children}
+            <Footer />
+            <WhatsAppFab />
+          </InquiryProvider>
         </NextIntlClientProvider>
       </body>
     </html>

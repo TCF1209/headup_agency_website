@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { InquiryTrigger } from "@/components/InquiryTrigger";
 
 export function CtaBanner() {
   const t = useTranslations("home.ctaBanner");
@@ -26,13 +27,10 @@ export function CtaBanner() {
                   className="transition-transform group-hover:translate-x-1"
                 />
               </Link>
-              <Link
-                href="/partner"
-                className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-white/80 px-6 py-4 font-mono text-sm font-medium uppercase tracking-wider text-white transition-colors hover:text-dark-primary"
-              >
+              <InquiryTrigger className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-white/80 px-6 py-4 font-mono text-sm font-medium uppercase tracking-wider text-white transition-colors hover:text-dark-primary">
                 <span className="absolute inset-0 origin-left scale-x-0 bg-white transition-transform duration-200 group-hover:scale-x-100" />
                 <span className="relative">{cta("sendInquiry")}</span>
-              </Link>
+              </InquiryTrigger>
             </div>
           </div>
         </div>
