@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { setRequestLocale } from "next-intl/server";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { VideoCard } from "@/components/VideoCard";
@@ -25,6 +26,7 @@ export async function generateMetadata({
 const CASE_STUDIES = [
   {
     client: "Hawker Stall · Klang Valley",
+    image: "/images/case-studies/hawker.jpg",
     problem: "Low visibility on GrabFood, averaging 20 orders/day.",
     solution:
       "Full menu redesign + promotional campaign + ad spend management across both GrabFood and Foodpanda.",
@@ -32,6 +34,7 @@ const CASE_STUDIES = [
   },
   {
     client: "Café · Petaling Jaya",
+    image: "/images/case-studies/cafe.jpg",
     problem: "Consistent 4.1★ rating dragging discovery; stale 45-item menu.",
     solution:
       "Trimmed menu to 22 high-margin items, launched a weekend-only campaign, trained staff on review-response SOP.",
@@ -39,6 +42,7 @@ const CASE_STUDIES = [
   },
   {
     client: "Cloud Kitchen · KL",
+    image: "/images/case-studies/cloud-kitchen.jpg",
     problem: "POS choking at peak; orders missed; staff reconciling manually.",
     solution:
       "Migrated to integrated POS with GrabFood/Foodpanda sync, trained 8 staff, established monthly reporting cadence.",
@@ -103,17 +107,30 @@ export default function SolutionsPage({
           {CASE_STUDIES.map((c, i) => (
             <article
               key={i}
-              className="grid gap-8 rounded-md border border-dark-border bg-dark-surface p-8 md:grid-cols-[1fr_2fr] md:gap-12 md:p-12"
+              className="group grid gap-0 overflow-hidden rounded-md border border-dark-border bg-dark-surface md:grid-cols-[2fr_3fr]"
             >
-              <div>
-                <p className="font-mono text-xs uppercase tracking-wider text-accent">
-                  {`0${i + 1} / 0${CASE_STUDIES.length}`}
-                </p>
-                <p className="mt-3 font-mono text-sm uppercase tracking-wider text-offwhite">
-                  {c.client}
-                </p>
+              <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[420px]">
+                <Image
+                  src={c.image}
+                  alt={c.client}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 40vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-dark-primary/80 via-dark-primary/20 to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-dark-surface" />
+                <div className="absolute left-6 top-6 flex items-center gap-3">
+                  <span className="inline-flex items-center gap-2 rounded-md border border-dark-border bg-dark-primary/80 px-3 py-1.5 font-mono text-xs uppercase tracking-widest text-accent backdrop-blur-sm">
+                    <span className="h-1.5 w-1.5 bg-accent" />
+                    {`0${i + 1} / 0${CASE_STUDIES.length}`}
+                  </span>
+                </div>
+                <div className="absolute bottom-6 left-6 right-6">
+                  <p className="font-mono text-xs uppercase tracking-wider text-white">
+                    {c.client}
+                  </p>
+                </div>
               </div>
-              <div className="flex flex-col gap-8">
+              <div className="flex flex-col gap-8 p-8 md:p-12">
                 <Block label="Problem" body={c.problem} />
                 <Block label="Solution" body={c.solution} />
                 <div>
