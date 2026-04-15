@@ -43,7 +43,7 @@ export function TrustedByStrip({
                   alt={p.name}
                   width={p.width}
                   height={p.height}
-                  className="h-10 w-auto object-contain opacity-80 grayscale transition-all hover:opacity-100 hover:grayscale-0 md:h-12"
+                  className="h-10 w-auto object-contain transition-transform hover:scale-105 md:h-12"
                 />
               </motion.div>
             ))}
