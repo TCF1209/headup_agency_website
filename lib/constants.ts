@@ -10,7 +10,7 @@ export const BRAND = {
 } as const;
 
 export const SOCIAL = {
-  facebook: "#",
-  instagram: "#",
-  linkedin: "#",
+  facebook: "https://www.facebook.com/headupagency/",
+  instagram: "https://www.instagram.com/headupagency/",
+  linkedin: "https://www.linkedin.com/company/headupagency/",
 } as const;
