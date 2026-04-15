@@ -5,6 +5,7 @@ import { CaseStudiesSection } from "@/components/home/CaseStudiesSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { WhySection } from "@/components/home/WhySection";
 import { CtaBanner } from "@/components/home/CtaBanner";
+import { TrustedByStrip } from "@/components/TrustedByStrip";
 
 export default function HomePage({
   params,
@@ -15,9 +16,11 @@ export default function HomePage({
   return (
     <>
       <HeroSection />
+      <TrustedByStrip variant="platforms" />
       <ServicesSection />
       <CaseStudiesSection />
       <TestimonialsSection />
+      <TrustedByStrip variant="clients" />
       <WhySection />
       <CtaBanner />
     </>

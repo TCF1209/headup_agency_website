@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { Rocket, Lightbulb, Handshake } from "lucide-react";
 import { ApplicationForm, type ApplicationFormHandle } from "./ApplicationForm";
 import { JobCard, type Job } from "./JobCard";
+import { TeamGallery } from "./TeamGallery";
 
 // TODO: replace with real openings from Sanity
 const JOBS: Job[] = [
@@ -64,6 +65,8 @@ export function CareersInteractive() {
           ))}
         </div>
       </section>
+
+      <TeamGallery />
 
       <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
         <p className="mb-4 font-mono text-xs uppercase tracking-wider text-muted">

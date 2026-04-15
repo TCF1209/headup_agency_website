@@ -1,6 +1,7 @@
 import { Award, TrendingUp, ShieldCheck, Users } from "lucide-react";
 import { setRequestLocale } from "next-intl/server";
 import { PartnerForm } from "@/components/PartnerForm";
+import { TrustedByStrip } from "@/components/TrustedByStrip";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -94,6 +95,8 @@ export default function PartnerPage({
           ))}
         </div>
       </section>
+
+      <TrustedByStrip variant="platforms" />
 
       <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
         <p className="mb-4 font-mono text-xs uppercase tracking-wider text-muted">
