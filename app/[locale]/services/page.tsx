@@ -285,7 +285,7 @@ function ServiceHero({
       {variant === "pos" ? (
         <div className="relative aspect-[21/9] w-full overflow-hidden rounded-md bg-dark-surface">
           <Image
-            src="/images/services/pos.jpg"
+            src="/images/services/pos-v2.jpg"
             alt="POS system hardware setup"
             fill
             priority
