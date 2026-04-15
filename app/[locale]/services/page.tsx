@@ -13,6 +13,7 @@ import {
   Users,
   type LucideIcon,
 } from "lucide-react";
+import Image from "next/image";
 import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { FaqAccordion } from "@/components/FaqAccordion";
@@ -123,6 +124,7 @@ export default function ServicesPage({
         faqs={GRABFOOD_FAQS}
         ctaLabel="Book a free consultation"
         ctaHref="/book"
+        variant="delivery"
       />
 
       <div className="border-t border-dark-border" />
@@ -136,7 +138,7 @@ export default function ServicesPage({
         faqs={POS_FAQS}
         ctaLabel="Get a quote"
         ctaHref="/book"
-        inverse
+        variant="pos"
       />
     </main>
   );
@@ -151,7 +153,7 @@ function ServiceBlock({
   faqs,
   ctaLabel,
   ctaHref,
-  inverse = false,
+  variant,
 }: {
   id: string;
   label: string;
@@ -161,7 +163,7 @@ function ServiceBlock({
   faqs: { q: string; a: string }[];
   ctaLabel: string;
   ctaHref: string;
-  inverse?: boolean;
+  variant: "delivery" | "pos";
 }) {
   const steps = [
     { n: "01", t: "Audit", d: "Current state, operational gaps, ad baseline." },
@@ -172,11 +174,10 @@ function ServiceBlock({
   return (
     <section id={id} className="relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="grid gap-10 md:grid-cols-[1fr_1.2fr] md:gap-16">
+        <ServiceHero variant={variant} label={label} />
+
+        <div className="mt-12 grid gap-10 md:grid-cols-[1fr_1.2fr] md:gap-16">
           <div>
-            <p className="mb-4 font-mono text-xs uppercase tracking-widest text-accent">
-              {label}
-            </p>
             <h2 className="font-display text-4xl font-bold leading-[1] tracking-tight text-white md:text-6xl">
               {title}
             </h2>
@@ -203,9 +204,7 @@ function ServiceBlock({
             <p className="mb-4 font-mono text-xs uppercase tracking-wider text-muted">
               {"// WHAT'S INCLUDED"}
             </p>
-            <ul
-              className={`grid grid-cols-1 gap-3 sm:grid-cols-2 ${inverse ? "" : ""}`}
-            >
+            <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
               {includes.map(({ icon: Icon, label: l }) => (
                 <li
                   key={l}
@@ -268,5 +267,74 @@ function ServiceBlock({
         </div>
       </div>
     </section>
+  );
+}
+
+function ServiceHero({
+  variant,
+  label,
+}: {
+  variant: "delivery" | "pos";
+  label: string;
+}) {
+  return (
+    <div className="mb-2">
+      <p className="mb-6 font-mono text-xs uppercase tracking-widest text-accent">
+        {label}
+      </p>
+      {variant === "pos" ? (
+        <div className="relative aspect-[21/9] w-full overflow-hidden rounded-md bg-dark-surface">
+          <Image
+            src="/images/services/pos.jpg"
+            alt="POS system hardware setup"
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 1280px"
+            className="object-cover"
+          />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-dark-primary/70 via-dark-primary/10 to-transparent" />
+          <div className="absolute bottom-6 left-6 inline-flex items-center gap-2 rounded-md border border-dark-border bg-dark-primary/80 px-4 py-2 backdrop-blur-sm">
+            <span className="h-2 w-2 bg-accent" />
+            <span className="font-mono text-xs uppercase tracking-wider text-white">
+              Integrated hardware + software
+            </span>
+          </div>
+        </div>
+      ) : (
+        <div className="relative aspect-[21/9] w-full overflow-hidden rounded-md border border-dark-border bg-dark-surface">
+          <div className="noise pointer-events-none absolute inset-0 opacity-40" />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 border-2 border-dark-border"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -left-12 bottom-8 h-40 w-40 border border-accent/20"
+          />
+          <div className="relative flex h-full flex-col items-center justify-center gap-8 px-8">
+            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted">
+              We run campaigns on
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
+              <Image
+                src="/images/platforms/grabfood.png"
+                alt="GrabFood"
+                width={220}
+                height={64}
+                className="h-12 w-auto object-contain md:h-16"
+              />
+              <div className="h-10 w-px bg-dark-border" />
+              <Image
+                src="/images/platforms/foodpanda.jpg"
+                alt="Foodpanda"
+                width={240}
+                height={64}
+                className="h-12 w-auto object-contain md:h-16"
+              />
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
