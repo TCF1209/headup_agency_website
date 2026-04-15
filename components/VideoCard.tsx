@@ -8,11 +8,13 @@ export function VideoCard({
   title,
   caption,
   youtubeId,
+  poster,
   index = 0,
 }: {
   title: string;
   caption: string;
   youtubeId: string;
+  poster?: string;
   index?: number;
 }) {
   const [playing, setPlaying] = useState(false);
@@ -44,7 +46,7 @@ export function VideoCard({
             <div
               className="absolute inset-0 bg-cover bg-center transition-opacity group-hover:opacity-80"
               style={{
-                backgroundImage: `url(https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg)`,
+                backgroundImage: `url(${poster ?? `https://img.youtube.com/vi/${youtubeId}/maxresdefault.jpg`})`,
               }}
             />
             <div className="absolute inset-0 bg-black/30 transition-colors group-hover:bg-black/50" />

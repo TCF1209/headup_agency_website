@@ -52,9 +52,24 @@ const CASE_STUDIES = [
 
 // TODO: replace with real testimonial videos
 const VIDEOS = [
-  { title: "Hawker stall +280% orders", caption: "Klang Valley · 60 days", youtubeId: "dQw4w9WgXcQ" },
-  { title: "Café rating 4.1 → 4.8", caption: "Petaling Jaya · 90 days", youtubeId: "dQw4w9WgXcQ" },
-  { title: "Cloud kitchen POS migration", caption: "Kuala Lumpur", youtubeId: "dQw4w9WgXcQ" },
+  {
+    title: "Hawker stall +280% orders",
+    caption: "Klang Valley · 60 days",
+    youtubeId: "dQw4w9WgXcQ",
+    poster: "/images/case-studies/hawker.jpg",
+  },
+  {
+    title: "Café rating 4.1 → 4.8",
+    caption: "Petaling Jaya · 90 days",
+    youtubeId: "dQw4w9WgXcQ",
+    poster: "/images/case-studies/cafe.jpg",
+  },
+  {
+    title: "Cloud kitchen POS migration",
+    caption: "Kuala Lumpur",
+    youtubeId: "dQw4w9WgXcQ",
+    poster: "/images/case-studies/cloud-kitchen.jpg",
+  },
 ];
 
 // TODO: replace with real quotes
