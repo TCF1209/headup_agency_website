@@ -315,21 +315,21 @@ function ServiceHero({
             <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-muted">
               We run campaigns on
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-10 md:gap-16">
+            <div className="flex flex-wrap items-center justify-center gap-10 md:gap-20 lg:gap-28">
               <Image
                 src="/images/platforms/grabfood.png"
                 alt="GrabFood"
-                width={220}
-                height={64}
-                className="h-12 w-auto object-contain md:h-16"
+                width={440}
+                height={128}
+                className="h-14 w-auto object-contain md:h-28 lg:h-36"
               />
-              <div className="h-10 w-px bg-dark-border" />
+              <div className="h-10 w-px bg-dark-border md:h-24" />
               <Image
                 src="/images/platforms/foodpanda.jpg"
                 alt="Foodpanda"
-                width={240}
-                height={64}
-                className="h-12 w-auto object-contain md:h-16"
+                width={480}
+                height={128}
+                className="h-14 w-auto object-contain md:h-28 lg:h-36"
               />
             </div>
           </div>
