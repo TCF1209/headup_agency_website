@@ -11,7 +11,7 @@ export function HeroSection() {
   const s = useTranslations("home.stats");
   const cta = useTranslations("cta");
 
-  const headline = t("headline");
+  const headline = t.raw("headline") as string;
   const parts = headline.split(/(<accent>.*?<\/accent>)/g).filter(Boolean);
 
   return (
