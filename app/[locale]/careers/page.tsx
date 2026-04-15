@@ -26,12 +26,12 @@ export default async function CareersPage({
   setRequestLocale(locale);
 
   return (
-    <main className="bg-dark-primary pt-28">
+    <main className="bg-light-bg pt-28 text-dark-primary">
       <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
         <p className="mb-4 font-mono text-xs uppercase tracking-widest text-accent">
           {"// CAREERS"}
         </p>
-        <h1 className="max-w-4xl font-display text-5xl font-bold leading-[0.95] tracking-tight text-white md:text-7xl">
+        <h1 className="max-w-4xl font-display text-5xl font-bold leading-[0.95] tracking-tight text-dark-primary md:text-7xl">
           Join the team that grows F&amp;B businesses.
         </h1>
       </div>

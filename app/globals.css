@@ -26,7 +26,7 @@ body {
 }
 
 ::selection {
-  background: #e8ff00;
+  background: #ff6b3d;
   color: #1a1a1a;
 }
 
@@ -42,11 +42,11 @@ body {
   border-radius: 0;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #e8ff00;
+  background: #ff6b3d;
 }
 
 .rdp-custom {
-  --rdp-accent-color: #e8ff00;
+  --rdp-accent-color: #ff6b3d;
   --rdp-background-color: #242424;
   --rdp-accent-color-dark: #c8dc00;
   --rdp-background-color-dark: #1a1a1a;
@@ -56,16 +56,19 @@ body {
 .rdp-custom .rdp-day_selected,
 .rdp-custom .rdp-day_selected:focus-visible,
 .rdp-custom .rdp-day_selected:hover {
-  background-color: #e8ff00;
+  background-color: #ff6b3d;
   color: #1a1a1a;
 }
 .rdp-custom .rdp-day_today {
-  color: #e8ff00;
+  color: #ff6b3d;
 }
 
 @layer components {
   .input {
-    @apply w-full rounded-md border border-dark-border bg-dark-surface px-4 py-3 text-base text-white outline-none transition-all placeholder:text-muted focus:border-transparent focus:shadow-[0_0_0_2px_#E8FF00];
+    @apply w-full rounded-md border border-dark-border bg-dark-surface px-4 py-3 text-base text-white outline-none transition-all placeholder:text-muted focus:border-transparent focus:shadow-[0_0_0_2px_#FF6B3D];
+  }
+  .input-light {
+    @apply w-full rounded-md border border-light-border bg-white px-4 py-3 text-base text-dark-primary outline-none transition-all placeholder:text-light-muted focus:border-transparent focus:shadow-[0_0_0_2px_#FF6B3D];
   }
 }
 

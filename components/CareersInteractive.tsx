@@ -51,25 +51,25 @@ export function CareersInteractive() {
   return (
     <>
       <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-        <p className="mb-4 font-mono text-xs uppercase tracking-wider text-muted">
+        <p className="mb-4 font-mono text-xs uppercase tracking-wider text-light-muted">
           {"// HOW WE WORK"}
         </p>
         <div className="grid gap-8 md:grid-cols-3">
           {VALUES.map((v) => (
             <div key={v.title} className="border-l-2 border-accent pl-6">
               <v.icon size={28} className="mb-4 text-accent" />
-              <h3 className="font-display text-2xl font-bold text-white">{v.title}</h3>
-              <p className="mt-2 text-sm text-offwhite">{v.description}</p>
+              <h3 className="font-display text-2xl font-bold text-dark-primary">{v.title}</h3>
+              <p className="mt-2 text-sm text-light-muted">{v.description}</p>
             </div>
           ))}
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-        <p className="mb-4 font-mono text-xs uppercase tracking-wider text-muted">
+        <p className="mb-4 font-mono text-xs uppercase tracking-wider text-light-muted">
           {"// OPEN ROLES"}
         </p>
-        <h2 className="max-w-2xl font-display text-4xl font-bold leading-[1] tracking-tight text-white md:text-6xl">
+        <h2 className="max-w-2xl font-display text-4xl font-bold leading-[1] tracking-tight text-dark-primary md:text-6xl">
           What we&rsquo;re hiring for.
         </h2>
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -80,10 +80,10 @@ export function CareersInteractive() {
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-        <p className="mb-4 font-mono text-xs uppercase tracking-wider text-muted">
+        <p className="mb-4 font-mono text-xs uppercase tracking-wider text-light-muted">
           {"// APPLY"}
         </p>
-        <h2 className="max-w-2xl font-display text-4xl font-bold leading-[1] tracking-tight text-white md:text-6xl">
+        <h2 className="max-w-2xl font-display text-4xl font-bold leading-[1] tracking-tight text-dark-primary md:text-6xl">
           Tell us about yourself.
         </h2>
         <div className="mt-12">

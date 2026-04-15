@@ -50,15 +50,15 @@ export default function PartnerPage({
   setRequestLocale(params.locale);
 
   return (
-    <main className="bg-dark-primary pt-28">
+    <main className="bg-light-bg pt-28 text-dark-primary">
       <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
         <p className="mb-4 font-mono text-xs uppercase tracking-widest text-accent">
           {"// PARTNER PROGRAMME"}
         </p>
-        <h1 className="max-w-4xl font-display text-5xl font-bold leading-[0.95] tracking-tight text-white md:text-7xl">
+        <h1 className="max-w-4xl font-display text-5xl font-bold leading-[0.95] tracking-tight text-dark-primary md:text-7xl">
           Become an authorised partner.
         </h1>
-        <div className="mt-8 max-w-2xl space-y-4 text-offwhite md:text-lg">
+        <div className="mt-8 max-w-2xl space-y-4 text-light-muted md:text-lg">
           <p>
             {/* TODO: real programme description */}
             We work with POS resellers, F&amp;B consultants, and agencies that share our
@@ -72,23 +72,23 @@ export default function PartnerPage({
       </div>
 
       <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-        <p className="mb-4 font-mono text-xs uppercase tracking-wider text-muted">
+        <p className="mb-4 font-mono text-xs uppercase tracking-wider text-light-muted">
           {"// BENEFITS"}
         </p>
         <div className="grid gap-6 md:grid-cols-2">
           {BENEFITS.map((b) => (
             <div
               key={b.title}
-              className="flex gap-5 rounded-md border border-dark-border bg-dark-surface p-6"
+              className="flex gap-5 rounded-md border border-light-border bg-light-surface p-6"
             >
-              <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded border border-dark-border text-accent">
+              <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded border border-light-border text-accent">
                 <b.icon size={22} />
               </span>
               <div>
-                <h3 className="font-display text-xl font-bold text-white">
+                <h3 className="font-display text-xl font-bold text-dark-primary">
                   {b.title}
                 </h3>
-                <p className="mt-2 text-sm text-offwhite">{b.description}</p>
+                <p className="mt-2 text-sm text-light-muted">{b.description}</p>
               </div>
             </div>
           ))}
@@ -96,10 +96,10 @@ export default function PartnerPage({
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-        <p className="mb-4 font-mono text-xs uppercase tracking-wider text-muted">
+        <p className="mb-4 font-mono text-xs uppercase tracking-wider text-light-muted">
           {"// INQUIRY"}
         </p>
-        <h2 className="max-w-2xl font-display text-4xl font-bold leading-[1] tracking-tight text-white md:text-6xl">
+        <h2 className="max-w-2xl font-display text-4xl font-bold leading-[1] tracking-tight text-dark-primary md:text-6xl">
           Tell us how you&rsquo;d like to partner.
         </h2>
         <div className="mt-12 max-w-3xl">

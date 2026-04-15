@@ -15,11 +15,14 @@ const config: Config = {
         },
         light: {
           bg: "#F8F8F8",
+          surface: "#FFFFFF",
+          border: "#E5E5E5",
+          muted: "#666666",
         },
         offwhite: "#F5F5F5",
         accent: {
-          DEFAULT: "#E8FF00",
-          muted: "#C8DC00",
+          DEFAULT: "#FF6B3D",
+          muted: "#E55627",
         },
         muted: "#888888",
       },
