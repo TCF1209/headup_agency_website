@@ -35,7 +35,7 @@ export function PartnerForm() {
   };
 
   return (
-    <div className="rounded-md border border-light-border bg-light-surface p-6 md:p-10">
+    <div className="rounded-md bg-dark-surface/40 p-6 md:p-10">
       <AnimatePresence mode="wait">
         {submitted ? (
           <motion.div
@@ -52,7 +52,7 @@ export function PartnerForm() {
             >
               <Check size={28} />
             </motion.div>
-            <p className="font-display text-2xl font-bold text-dark-primary">
+            <p className="font-display text-2xl font-bold text-white">
               {thx("inquiry")}
             </p>
           </motion.div>
@@ -64,21 +64,21 @@ export function PartnerForm() {
           >
             <div className="grid gap-5 md:grid-cols-2">
               <Field label={t("fullName")} error={errors.fullName?.message}>
-                <input {...register("fullName")} className="input-light" placeholder="—" />
+                <input {...register("fullName")} className="input" placeholder="—" />
               </Field>
               <Field label="Company Name" error={errors.companyName?.message}>
-                <input {...register("companyName")} className="input-light" placeholder="—" />
+                <input {...register("companyName")} className="input" placeholder="—" />
               </Field>
               <Field label={t("email")} error={errors.email?.message}>
-                <input type="email" {...register("email")} className="input-light" placeholder="—" />
+                <input type="email" {...register("email")} className="input" placeholder="—" />
               </Field>
               <Field label={t("phone")} error={errors.phone?.message}>
-                <input {...register("phone")} className="input-light" placeholder="+60" />
+                <input {...register("phone")} className="input" placeholder="+60" />
               </Field>
               <Field label="Business Type" error={errors.businessType?.message}>
                 <input
                   {...register("businessType")}
-                  className="input-light"
+                  className="input"
                   placeholder="e.g. POS reseller, consultancy"
                 />
               </Field>

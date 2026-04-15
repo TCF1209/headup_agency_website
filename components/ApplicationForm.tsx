@@ -65,10 +65,7 @@ export const ApplicationForm = forwardRef<
   };
 
   return (
-    <div
-      ref={sectionRef}
-      className="rounded-md border border-light-border bg-light-surface p-6 md:p-10"
-    >
+    <div ref={sectionRef} className="rounded-md bg-dark-surface/40 p-6 md:p-10">
       <AnimatePresence mode="wait">
         {submitted ? (
           <motion.div
@@ -85,7 +82,7 @@ export const ApplicationForm = forwardRef<
             >
               <Check size={28} />
             </motion.div>
-            <p className="font-display text-2xl font-bold text-dark-primary">
+            <p className="font-display text-2xl font-bold text-white">
               {thx("application")}
             </p>
           </motion.div>
@@ -97,21 +94,21 @@ export const ApplicationForm = forwardRef<
           >
             <div className="grid gap-5 md:grid-cols-2">
               <Field label={t("fullName")} error={errors.fullName?.message}>
-                <input {...register("fullName")} className="input-light" placeholder="—" />
+                <input {...register("fullName")} className="input" placeholder="—" />
               </Field>
               <Field label={t("email")} error={errors.email?.message}>
                 <input
                   type="email"
                   {...register("email")}
-                  className="input-light"
+                  className="input"
                   placeholder="—"
                 />
               </Field>
               <Field label={t("phone")} error={errors.phone?.message}>
-                <input {...register("phone")} className="input-light" placeholder="+60" />
+                <input {...register("phone")} className="input" placeholder="+60" />
               </Field>
               <Field label="Position" error={errors.position?.message}>
-                <select {...register("position")} className="input-light">
+                <select {...register("position")} className="input">
                   <option value="">—</option>
                   {positions.map((p) => (
                     <option key={p} value={p}>
@@ -127,7 +124,7 @@ export const ApplicationForm = forwardRef<
             >
               <input
                 {...register("portfolioUrl")}
-                className="input-light"
+                className="input"
                 placeholder="https://"
               />
             </Field>

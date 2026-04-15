@@ -85,31 +85,31 @@ export default function SolutionsPage({
   setRequestLocale(params.locale);
 
   return (
-    <main className="bg-light-bg pt-28 text-dark-primary">
+    <main className="bg-dark-primary pt-28">
       <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
         <p className="mb-4 font-mono text-xs uppercase tracking-widest text-accent">
           {"// SOLUTIONS"}
         </p>
-        <h1 className="max-w-5xl font-display text-5xl font-bold leading-[0.95] tracking-tight text-dark-primary md:text-8xl">
+        <h1 className="max-w-5xl font-display text-5xl font-bold leading-[0.95] tracking-tight text-white md:text-8xl">
           Real problems. Real solutions. Real results.
         </h1>
       </div>
 
       <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-        <p className="mb-10 font-mono text-xs uppercase tracking-wider text-light-muted">
+        <p className="mb-10 font-mono text-xs uppercase tracking-wider text-muted">
           {"// CASE STUDIES"}
         </p>
         <div className="flex flex-col gap-6">
           {CASE_STUDIES.map((c, i) => (
             <article
               key={i}
-              className="grid gap-8 rounded-md border border-light-border bg-light-surface p-8 md:grid-cols-[1fr_2fr] md:gap-12 md:p-12"
+              className="grid gap-8 rounded-md border border-dark-border bg-dark-surface p-8 md:grid-cols-[1fr_2fr] md:gap-12 md:p-12"
             >
               <div>
                 <p className="font-mono text-xs uppercase tracking-wider text-accent">
                   {`0${i + 1} / 0${CASE_STUDIES.length}`}
                 </p>
-                <p className="mt-3 font-mono text-sm uppercase tracking-wider text-dark-primary">
+                <p className="mt-3 font-mono text-sm uppercase tracking-wider text-offwhite">
                   {c.client}
                 </p>
               </div>
@@ -117,14 +117,14 @@ export default function SolutionsPage({
                 <Block label="Problem" body={c.problem} />
                 <Block label="Solution" body={c.solution} />
                 <div>
-                  <p className="mb-3 font-mono text-xs uppercase tracking-wider text-light-muted">
+                  <p className="mb-3 font-mono text-xs uppercase tracking-wider text-muted">
                     Results
                   </p>
                   <div className="grid gap-3 sm:grid-cols-3">
                     {c.results.map((r) => (
                       <div
                         key={r}
-                        className="rounded border-l-2 border-accent bg-light-bg px-4 py-3 font-display text-lg font-bold leading-tight text-dark-primary"
+                        className="rounded border-l-2 border-accent bg-dark-primary px-4 py-3 font-display text-lg font-bold leading-tight text-white"
                       >
                         {r}
                       </div>
@@ -138,10 +138,10 @@ export default function SolutionsPage({
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-        <p className="mb-4 font-mono text-xs uppercase tracking-wider text-light-muted">
+        <p className="mb-4 font-mono text-xs uppercase tracking-wider text-muted">
           {"// CLIENT STORIES"}
         </p>
-        <h2 className="max-w-2xl font-display text-4xl font-bold leading-[1] tracking-tight text-dark-primary md:text-6xl">
+        <h2 className="max-w-2xl font-display text-4xl font-bold leading-[1] tracking-tight text-white md:text-6xl">
           Watch operators tell it themselves.
         </h2>
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -152,22 +152,22 @@ export default function SolutionsPage({
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-        <p className="mb-4 font-mono text-xs uppercase tracking-wider text-light-muted">
+        <p className="mb-4 font-mono text-xs uppercase tracking-wider text-muted">
           {"// TESTIMONIALS"}
         </p>
-        <h2 className="max-w-2xl font-display text-4xl font-bold leading-[1] tracking-tight text-dark-primary md:text-6xl">
+        <h2 className="max-w-2xl font-display text-4xl font-bold leading-[1] tracking-tight text-white md:text-6xl">
           What they said after.
         </h2>
         <div className="mt-12 grid gap-6 md:grid-cols-2">
           {QUOTES.map((q, i) => (
-            <TestimonialCard key={q.name} {...q} index={i} onLight />
+            <TestimonialCard key={q.name} {...q} index={i} />
           ))}
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-        <div className="rounded-md border border-light-border bg-light-surface p-10 text-center md:p-16">
-          <h2 className="mx-auto max-w-3xl font-display text-3xl font-bold leading-[1.05] tracking-tight text-dark-primary md:text-5xl">
+        <div className="rounded-md bg-dark-surface p-10 text-center md:p-16">
+          <h2 className="mx-auto max-w-3xl font-display text-3xl font-bold leading-[1.05] tracking-tight text-white md:text-5xl">
             Want results like these? Start with 30 minutes.
           </h2>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -178,8 +178,8 @@ export default function SolutionsPage({
               Book a consultant
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
             </Link>
-            <InquiryTrigger className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-dark-primary px-6 py-4 font-mono text-sm font-medium uppercase tracking-wider text-dark-primary transition-colors hover:text-white">
-              <span className="absolute inset-0 origin-left scale-x-0 bg-dark-primary transition-transform duration-200 group-hover:scale-x-100" />
+            <InquiryTrigger className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-white/80 px-6 py-4 font-mono text-sm font-medium uppercase tracking-wider text-white transition-colors hover:text-dark-primary">
+              <span className="absolute inset-0 origin-left scale-x-0 bg-white transition-transform duration-200 group-hover:scale-x-100" />
               <span className="relative">Send an inquiry</span>
             </InquiryTrigger>
           </div>
@@ -192,10 +192,10 @@ export default function SolutionsPage({
 function Block({ label, body }: { label: string; body: string }) {
   return (
     <div>
-      <p className="mb-2 font-mono text-xs uppercase tracking-wider text-light-muted">
+      <p className="mb-2 font-mono text-xs uppercase tracking-wider text-muted">
         {label}
       </p>
-      <p className="text-lg text-dark-primary md:text-xl">{body}</p>
+      <p className="text-lg text-white md:text-xl">{body}</p>
     </div>
   );
 }
