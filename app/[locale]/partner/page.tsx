@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Award, TrendingUp, ShieldCheck, Users } from "lucide-react";
 import { setRequestLocale } from "next-intl/server";
 import { PartnerForm } from "@/components/PartnerForm";
@@ -53,22 +54,44 @@ export default function PartnerPage({
   return (
     <main className="bg-dark-primary pt-28">
       <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-        <p className="mb-4 font-mono text-xs uppercase tracking-widest text-accent">
-          {"// PARTNER PROGRAMME"}
-        </p>
-        <h1 className="max-w-4xl font-display text-5xl font-bold leading-[0.95] tracking-tight text-white md:text-7xl">
-          Become an authorised partner.
-        </h1>
-        <div className="mt-8 max-w-2xl space-y-4 text-offwhite md:text-lg">
-          <p>
-            {/* TODO: real programme description */}
-            We work with POS resellers, F&amp;B consultants, and agencies that share our
-            bias for specifics over slogans. If you already serve restaurants and want
-            a credible partner for digital growth and POS delivery, let&rsquo;s talk.
-          </p>
-          <p>
-            Simple terms, fair splits, real support. No channel theatre.
-          </p>
+        <div className="grid gap-12 md:grid-cols-[1.3fr_1fr] md:items-center md:gap-16">
+          <div>
+            <p className="mb-4 font-mono text-xs uppercase tracking-widest text-accent">
+              {"// PARTNER PROGRAMME"}
+            </p>
+            <h1 className="font-display text-5xl font-bold leading-[0.95] tracking-tight text-white md:text-7xl">
+              Become an authorised partner.
+            </h1>
+            <div className="mt-8 max-w-2xl space-y-4 text-offwhite md:text-lg">
+              <p>
+                {/* TODO: real programme description */}
+                We work with POS resellers, F&amp;B consultants, and agencies that share our
+                bias for specifics over slogans. If you already serve restaurants and want
+                a credible partner for digital growth and POS delivery, let&rsquo;s talk.
+              </p>
+              <p>Simple terms, fair splits, real support. No channel theatre.</p>
+            </div>
+          </div>
+
+          <div className="relative aspect-[4/5] overflow-hidden rounded-md bg-dark-surface">
+            <Image
+              src="/images/partner/handshake.jpg"
+              alt="Partnership handshake"
+              fill
+              priority
+              sizes="(max-width: 768px) 100vw, 420px"
+              className="object-cover"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-dark-primary/70 via-transparent to-transparent" />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -right-6 -top-6 h-32 w-32 border-2 border-accent/40"
+            />
+            <div className="absolute bottom-6 left-6 inline-flex items-center gap-2 rounded-md border border-dark-border bg-dark-primary/85 px-3 py-1.5 font-mono text-xs uppercase tracking-widest text-accent backdrop-blur-sm">
+              <span className="h-1.5 w-1.5 bg-accent" />
+              Fair terms · Real support
+            </div>
+          </div>
         </div>
       </div>
 
