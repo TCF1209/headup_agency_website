@@ -18,9 +18,6 @@ import { setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { InquiryTrigger } from "@/components/InquiryTrigger";
-import { PageHeader } from "@/components/PageHeader";
-import { IncludesGrid } from "@/components/services/IncludesGrid";
-import { StepsGrid } from "@/components/services/StepsGrid";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -110,10 +107,12 @@ export default function ServicesPage({
   return (
     <main className="bg-dark-primary pt-28">
       <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-        <PageHeader
-          label="// SERVICES"
-          title={<>Two focuses. Both F&amp;B. Done properly.</>}
-        />
+        <p className="mb-4 font-mono text-xs uppercase tracking-widest text-accent">
+          {"// SERVICES"}
+        </p>
+        <h1 className="max-w-4xl font-display text-5xl font-bold leading-[0.95] tracking-tight text-white md:text-7xl">
+          Two focuses. Both F&amp;B. Done properly.
+        </h1>
       </div>
 
       <ServiceBlock
@@ -166,6 +165,12 @@ function ServiceBlock({
   ctaHref: string;
   variant: "delivery" | "pos";
 }) {
+  const steps = [
+    { n: "01", t: "Audit", d: "Current state, operational gaps, ad baseline." },
+    { n: "02", t: "Strategy", d: "Menu, pricing, campaign calendar, budget plan." },
+    { n: "03", t: "Execute", d: "Weekly reporting, monthly reviews, fast iteration." },
+  ];
+
   return (
     <section id={id} className="relative py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
@@ -199,7 +204,19 @@ function ServiceBlock({
             <p className="mb-4 font-mono text-xs uppercase tracking-wider text-muted">
               {"// WHAT'S INCLUDED"}
             </p>
-            <IncludesGrid items={includes} />
+            <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+              {includes.map(({ icon: Icon, label: l }) => (
+                <li
+                  key={l}
+                  className="flex items-center gap-3 rounded-md border border-dark-border bg-dark-surface p-4"
+                >
+                  <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded border border-dark-border text-accent">
+                    <Icon size={18} />
+                  </span>
+                  <span className="text-sm text-offwhite">{l}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
@@ -207,7 +224,28 @@ function ServiceBlock({
           <p className="mb-4 font-mono text-xs uppercase tracking-wider text-muted">
             {"// HOW IT WORKS"}
           </p>
-          <StepsGrid />
+          <div className="grid gap-6 md:grid-cols-3">
+            {steps.map((s, i) => (
+              <div
+                key={s.n}
+                className="relative rounded-md border border-dark-border bg-dark-surface p-8"
+              >
+                <div className="font-display text-6xl font-bold text-accent">
+                  {s.n}
+                </div>
+                <h3 className="mt-4 font-display text-2xl font-bold text-white">
+                  {s.t}
+                </h3>
+                <p className="mt-2 text-sm text-offwhite">{s.d}</p>
+                {i < 2 && (
+                  <ArrowRight
+                    size={18}
+                    className="absolute -right-3 top-1/2 hidden -translate-y-1/2 rounded-full bg-dark-primary p-1 text-accent md:block"
+                  />
+                )}
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className="mt-24 grid gap-12 md:grid-cols-[1fr_1.2fr] md:gap-16">
