@@ -1,10 +1,11 @@
-import Image from "next/image";
 import { setRequestLocale } from "next-intl/server";
 import { TestimonialCard } from "@/components/TestimonialCard";
 import { VideoCard } from "@/components/VideoCard";
 import { InquiryTrigger } from "@/components/InquiryTrigger";
 import { Link } from "@/i18n/navigation";
 import { ArrowRight } from "lucide-react";
+import { PageHeader } from "@/components/PageHeader";
+import { CaseStudyArticle } from "@/components/solutions/CaseStudyArticle";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -106,12 +107,11 @@ export default function SolutionsPage({
   return (
     <main className="bg-dark-primary pt-28">
       <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-        <p className="mb-4 font-mono text-xs uppercase tracking-widest text-accent">
-          {"// SOLUTIONS"}
-        </p>
-        <h1 className="max-w-5xl font-display text-5xl font-bold leading-[0.95] tracking-tight text-white md:text-8xl">
-          Real problems. Real solutions. Real results.
-        </h1>
+        <PageHeader
+          label="// SOLUTIONS"
+          title="Real problems. Real solutions. Real results."
+          maxWidth="max-w-5xl"
+        />
       </div>
 
       <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
@@ -120,51 +120,12 @@ export default function SolutionsPage({
         </p>
         <div className="flex flex-col gap-6">
           {CASE_STUDIES.map((c, i) => (
-            <article
+            <CaseStudyArticle
               key={i}
-              className="group grid gap-0 overflow-hidden rounded-md border border-dark-border bg-dark-surface md:grid-cols-[2fr_3fr]"
-            >
-              <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[420px]">
-                <Image
-                  src={c.image}
-                  alt={c.client}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 40vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-dark-primary/80 via-dark-primary/20 to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-dark-surface" />
-                <div className="absolute left-6 top-6 flex items-center gap-3">
-                  <span className="inline-flex items-center gap-2 rounded-md border border-dark-border bg-dark-primary/80 px-3 py-1.5 font-mono text-xs uppercase tracking-widest text-accent backdrop-blur-sm">
-                    <span className="h-1.5 w-1.5 bg-accent" />
-                    {`0${i + 1} / 0${CASE_STUDIES.length}`}
-                  </span>
-                </div>
-                <div className="absolute bottom-6 left-6 right-6">
-                  <p className="font-mono text-xs uppercase tracking-wider text-white">
-                    {c.client}
-                  </p>
-                </div>
-              </div>
-              <div className="flex flex-col gap-8 p-8 md:p-12">
-                <Block label="Problem" body={c.problem} />
-                <Block label="Solution" body={c.solution} />
-                <div>
-                  <p className="mb-3 font-mono text-xs uppercase tracking-wider text-muted">
-                    Results
-                  </p>
-                  <div className="grid gap-3 sm:grid-cols-3">
-                    {c.results.map((r) => (
-                      <div
-                        key={r}
-                        className="rounded border-l-2 border-accent bg-dark-primary px-4 py-3 font-display text-lg font-bold leading-tight text-white"
-                      >
-                        {r}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </article>
+              data={c}
+              index={i}
+              total={CASE_STUDIES.length}
+            />
           ))}
         </div>
       </section>
@@ -218,16 +179,5 @@ export default function SolutionsPage({
         </div>
       </section>
     </main>
-  );
-}
-
-function Block({ label, body }: { label: string; body: string }) {
-  return (
-    <div>
-      <p className="mb-2 font-mono text-xs uppercase tracking-wider text-muted">
-        {label}
-      </p>
-      <p className="text-lg text-white md:text-xl">{body}</p>
-    </div>
   );
 }

@@ -1,5 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { CareersInteractive } from "@/components/CareersInteractive";
+import { PageHeader } from "@/components/PageHeader";
 import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
@@ -28,12 +29,10 @@ export default async function CareersPage({
   return (
     <main className="bg-dark-primary pt-28">
       <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-        <p className="mb-4 font-mono text-xs uppercase tracking-widest text-accent">
-          {"// CAREERS"}
-        </p>
-        <h1 className="max-w-4xl font-display text-5xl font-bold leading-[0.95] tracking-tight text-white md:text-7xl">
-          Join the team that grows F&amp;B businesses.
-        </h1>
+        <PageHeader
+          label="// CAREERS"
+          title={<>Join the team that grows F&amp;B businesses.</>}
+        />
       </div>
       <CareersInteractive />
     </main>
