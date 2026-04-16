@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
@@ -21,13 +21,6 @@ export function Navbar() {
   const t = useTranslations("nav");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const { scrollY } = useScroll();
-  const bg = useTransform(
-    scrollY,
-    [0, 80],
-    ["rgba(26,26,26,0)", "rgba(26,26,26,0.8)"],
-  );
-  const borderOpacity = useTransform(scrollY, [0, 80], [0, 1]);
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -41,14 +34,8 @@ export function Navbar() {
 
   return (
     <>
-      <motion.header
-        style={{ backgroundColor: bg }}
-        className="fixed inset-x-0 top-0 z-40 backdrop-blur-md"
-      >
-      <motion.div
-        style={{ opacity: borderOpacity }}
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-px bg-dark-border"
-      />
+      <header className="fixed inset-x-0 top-0 z-40 border-b border-dark-border bg-dark-primary">
+
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link href="/" className="flex items-center transition-opacity hover:opacity-75">
           <Image
@@ -91,7 +78,7 @@ export function Navbar() {
           </button>
         </div>
       </nav>
-      </motion.header>
+      </header>
 
       <AnimatePresence>
         {open && (
