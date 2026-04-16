@@ -70,7 +70,7 @@ export function BookingForm() {
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-accent text-dark-primary"
+          className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-accent text-white"
         >
           <Check size={28} />
         </motion.div>
@@ -161,7 +161,7 @@ export function BookingForm() {
                       onClick={() => field.onChange(slot.value)}
                       className={`rounded-md border px-4 py-4 text-left font-mono text-sm uppercase tracking-wider transition-colors ${
                         active
-                          ? "border-accent bg-accent text-dark-primary"
+                          ? "border-accent bg-accent text-white"
                           : "border-dark-border bg-dark-surface text-offwhite hover:border-accent hover:text-accent"
                       }`}
                     >
@@ -187,7 +187,7 @@ export function BookingForm() {
       <button
         type="submit"
         disabled={submitting}
-        className="mt-2 inline-flex items-center justify-center gap-2 rounded-md bg-accent px-6 py-4 font-mono text-sm font-medium uppercase tracking-wider text-dark-primary transition-all hover:scale-[1.01] hover:bg-accent-muted active:scale-[0.99] disabled:opacity-60"
+        className="mt-2 inline-flex items-center justify-center gap-2 rounded-md bg-accent px-6 py-4 font-mono text-sm font-medium uppercase tracking-wider text-white transition-all hover:scale-[1.01] hover:bg-accent-muted active:scale-[0.99] disabled:opacity-60"
       >
         <AnimatePresence mode="wait">
           {submitting ? (

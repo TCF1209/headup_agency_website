@@ -20,7 +20,7 @@ export default function HomePage({
       <ServicesSection />
       <CaseStudiesSection />
       <TestimonialsSection />
-      <TrustedByStrip variant="clients" />
+      <TrustedByStrip variant="clients" onLight />
       <WhySection />
       <CtaBanner />
     </>

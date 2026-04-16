@@ -20,11 +20,11 @@ export function TrustedByStrip({
   if (variant === "platforms") {
     return (
       <section
-        className={`relative py-16 ${onLight ? "border-y border-dark-border bg-light-bg" : "border-y border-dark-border bg-[#1f1f1f]"}`}
+        className={`relative py-16 ${onLight ? "border-y border-light-border bg-light-bg" : "border-y border-dark-border bg-[#1f1f1f]"}`}
       >
         <div className="mx-auto max-w-7xl px-6">
           <p
-            className={`mb-8 text-center font-mono text-xs uppercase tracking-widest ${onLight ? "text-muted" : "text-muted"}`}
+            className={`mb-8 text-center font-mono text-xs uppercase tracking-widest ${onLight ? "text-light-muted" : "text-muted"}`}
           >
             {"// WE INTEGRATE WITH"}
           </p>
@@ -72,7 +72,7 @@ export function TrustedByStrip({
             </h2>
           </div>
           <p
-            className={`max-w-sm text-sm ${onLight ? "text-muted" : "text-offwhite"}`}
+            className={`max-w-sm text-sm ${onLight ? "text-light-muted" : "text-offwhite"}`}
           >
             Be our next success story — your logo here next.
           </p>
@@ -86,10 +86,10 @@ export function TrustedByStrip({
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.3, delay: i * 0.04 }}
-              className={`flex aspect-[5/3] items-center justify-center rounded-md border-2 border-dashed ${onLight ? "border-dark-border/40 bg-white" : "border-dark-border bg-dark-surface/40"}`}
+              className={`flex aspect-[5/3] items-center justify-center rounded-md border-2 border-dashed ${onLight ? "border-light-border bg-white" : "border-dark-border bg-dark-surface/40"}`}
             >
               <span
-                className={`font-mono text-[10px] uppercase tracking-widest ${onLight ? "text-muted" : "text-muted"}`}
+                className={`font-mono text-[10px] uppercase tracking-widest ${onLight ? "text-light-muted" : "text-muted"}`}
               >
                 {"// YOUR LOGO HERE"}
               </span>

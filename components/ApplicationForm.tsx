@@ -65,7 +65,10 @@ export const ApplicationForm = forwardRef<
   };
 
   return (
-    <div ref={sectionRef} className="rounded-md bg-dark-surface/40 p-6 md:p-10">
+    <div
+      ref={sectionRef}
+      className="rounded-md border border-light-border bg-light-surface p-6 md:p-10"
+    >
       <AnimatePresence mode="wait">
         {submitted ? (
           <motion.div
@@ -78,11 +81,11 @@ export const ApplicationForm = forwardRef<
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-accent text-dark-primary"
+              className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-accent text-white"
             >
               <Check size={28} />
             </motion.div>
-            <p className="font-display text-2xl font-bold text-white">
+            <p className="font-display text-2xl font-bold text-dark-primary">
               {thx("application")}
             </p>
           </motion.div>
@@ -94,21 +97,21 @@ export const ApplicationForm = forwardRef<
           >
             <div className="grid gap-5 md:grid-cols-2">
               <Field label={t("fullName")} error={errors.fullName?.message}>
-                <input {...register("fullName")} className="input" placeholder="—" />
+                <input {...register("fullName")} className="input-light" placeholder="—" />
               </Field>
               <Field label={t("email")} error={errors.email?.message}>
                 <input
                   type="email"
                   {...register("email")}
-                  className="input"
+                  className="input-light"
                   placeholder="—"
                 />
               </Field>
               <Field label={t("phone")} error={errors.phone?.message}>
-                <input {...register("phone")} className="input" placeholder="+60" />
+                <input {...register("phone")} className="input-light" placeholder="+60" />
               </Field>
               <Field label="Position" error={errors.position?.message}>
-                <select {...register("position")} className="input">
+                <select {...register("position")} className="input-light">
                   <option value="">—</option>
                   {positions.map((p) => (
                     <option key={p} value={p}>
@@ -124,7 +127,7 @@ export const ApplicationForm = forwardRef<
             >
               <input
                 {...register("portfolioUrl")}
-                className="input"
+                className="input-light"
                 placeholder="https://"
               />
             </Field>
@@ -138,12 +141,12 @@ export const ApplicationForm = forwardRef<
             </Field>
 
             <div className="flex flex-col gap-2">
-              <span className="font-mono text-xs uppercase tracking-wider text-muted">
+              <span className="font-mono text-xs uppercase tracking-wider text-light-muted">
                 Resume (PDF / DOC / DOCX · max 5MB)
               </span>
-              <label className="group flex cursor-pointer items-center gap-3 rounded-md border border-dashed border-dark-border bg-dark-surface px-4 py-4 transition-colors hover:border-accent">
+              <label className="group flex cursor-pointer items-center gap-3 rounded-md border border-dashed border-light-border bg-white px-4 py-4 transition-colors hover:border-accent">
                 <Upload size={18} className="text-accent" />
-                <span className="flex-1 truncate text-sm text-offwhite">
+                <span className="flex-1 truncate text-sm text-body">
                   {fileName ?? "Click to upload"}
                 </span>
                 <input
@@ -172,7 +175,7 @@ export const ApplicationForm = forwardRef<
             <button
               type="submit"
               disabled={submitting}
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-md bg-accent px-6 py-4 font-mono text-sm font-medium uppercase tracking-wider text-dark-primary transition-all hover:scale-[1.01] hover:bg-accent-muted disabled:opacity-60"
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-md bg-accent px-6 py-4 font-mono text-sm font-medium uppercase tracking-wider text-white transition-all hover:scale-[1.01] hover:bg-accent-muted disabled:opacity-60"
             >
               {submitting ? (
                 <>
@@ -201,7 +204,7 @@ function Field({
 }) {
   return (
     <label className="flex flex-col gap-2">
-      <span className="font-mono text-xs uppercase tracking-wider text-muted">
+      <span className="font-mono text-xs uppercase tracking-wider text-light-muted">
         {label}
       </span>
       {children}

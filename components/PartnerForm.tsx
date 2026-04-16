@@ -35,7 +35,7 @@ export function PartnerForm() {
   };
 
   return (
-    <div className="rounded-md bg-dark-surface/40 p-6 md:p-10">
+    <div className="rounded-md border border-light-border bg-light-surface p-6 md:p-10">
       <AnimatePresence mode="wait">
         {submitted ? (
           <motion.div
@@ -48,11 +48,11 @@ export function PartnerForm() {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-accent text-dark-primary"
+              className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-full bg-accent text-white"
             >
               <Check size={28} />
             </motion.div>
-            <p className="font-display text-2xl font-bold text-white">
+            <p className="font-display text-2xl font-bold text-dark-primary">
               {thx("inquiry")}
             </p>
           </motion.div>
@@ -64,21 +64,21 @@ export function PartnerForm() {
           >
             <div className="grid gap-5 md:grid-cols-2">
               <Field label={t("fullName")} error={errors.fullName?.message}>
-                <input {...register("fullName")} className="input" placeholder="—" />
+                <input {...register("fullName")} className="input-light" placeholder="—" />
               </Field>
               <Field label="Company Name" error={errors.companyName?.message}>
-                <input {...register("companyName")} className="input" placeholder="—" />
+                <input {...register("companyName")} className="input-light" placeholder="—" />
               </Field>
               <Field label={t("email")} error={errors.email?.message}>
-                <input type="email" {...register("email")} className="input" placeholder="—" />
+                <input type="email" {...register("email")} className="input-light" placeholder="—" />
               </Field>
               <Field label={t("phone")} error={errors.phone?.message}>
-                <input {...register("phone")} className="input" placeholder="+60" />
+                <input {...register("phone")} className="input-light" placeholder="+60" />
               </Field>
               <Field label="Business Type" error={errors.businessType?.message}>
                 <input
                   {...register("businessType")}
-                  className="input"
+                  className="input-light"
                   placeholder="e.g. POS reseller, consultancy"
                 />
               </Field>
@@ -94,7 +94,7 @@ export function PartnerForm() {
             <button
               type="submit"
               disabled={submitting}
-              className="mt-2 inline-flex items-center justify-center gap-2 rounded-md bg-accent px-6 py-4 font-mono text-sm font-medium uppercase tracking-wider text-dark-primary transition-all hover:scale-[1.01] hover:bg-accent-muted disabled:opacity-60"
+              className="mt-2 inline-flex items-center justify-center gap-2 rounded-md bg-accent px-6 py-4 font-mono text-sm font-medium uppercase tracking-wider text-white transition-all hover:scale-[1.01] hover:bg-accent-muted disabled:opacity-60"
             >
               {submitting ? (
                 <>
@@ -123,7 +123,7 @@ function Field({
 }) {
   return (
     <label className="flex flex-col gap-2">
-      <span className="font-mono text-xs uppercase tracking-wider text-muted">
+      <span className="font-mono text-xs uppercase tracking-wider text-light-muted">
         {label}
       </span>
       {children}

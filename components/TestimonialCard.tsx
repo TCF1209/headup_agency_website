@@ -40,7 +40,7 @@ export function TestimonialCard({
         className={`flex items-center gap-3 border-t pt-5 ${onLight ? "border-black/10" : "border-dark-border"}`}
       >
         <div
-          className={`flex h-10 w-10 items-center justify-center rounded-full font-mono text-sm font-bold ${onLight ? "bg-dark-primary text-white" : "bg-accent text-dark-primary"}`}
+          className={`flex h-10 w-10 items-center justify-center rounded-full font-mono text-sm font-bold ${onLight ? "bg-dark-primary text-white" : "bg-accent text-white"}`}
         >
           {name[0]}
         </div>

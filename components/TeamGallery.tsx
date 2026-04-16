@@ -12,10 +12,10 @@ const PHOTOS = [
 export function TeamGallery() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-16 md:py-24">
-      <p className="mb-4 font-mono text-xs uppercase tracking-wider text-muted">
+      <p className="mb-4 font-mono text-xs uppercase tracking-wider text-light-muted">
         {"// THE TEAM"}
       </p>
-      <h2 className="max-w-2xl font-display text-4xl font-bold leading-[1] tracking-tight text-white md:text-6xl">
+      <h2 className="max-w-2xl font-display text-4xl font-bold leading-[1] tracking-tight text-dark-primary md:text-6xl">
         The people behind the results.
       </h2>
 

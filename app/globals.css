@@ -26,8 +26,8 @@ body {
 }
 
 ::selection {
-  background: #e8ff00;
-  color: #1a1a1a;
+  background: #a8562c;
+  color: #ffffff;
 }
 
 ::-webkit-scrollbar {
@@ -42,13 +42,13 @@ body {
   border-radius: 0;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #e8ff00;
+  background: #a8562c;
 }
 
 .rdp-custom {
-  --rdp-accent-color: #e8ff00;
+  --rdp-accent-color: #a8562c;
   --rdp-background-color: #242424;
-  --rdp-accent-color-dark: #c8dc00;
+  --rdp-accent-color-dark: #8b4520;
   --rdp-background-color-dark: #1a1a1a;
   color: #f5f5f5;
   font-family: var(--font-mono, ui-monospace), monospace;
@@ -56,16 +56,19 @@ body {
 .rdp-custom .rdp-day_selected,
 .rdp-custom .rdp-day_selected:focus-visible,
 .rdp-custom .rdp-day_selected:hover {
-  background-color: #e8ff00;
-  color: #1a1a1a;
+  background-color: #a8562c;
+  color: #ffffff;
 }
 .rdp-custom .rdp-day_today {
-  color: #e8ff00;
+  color: #a8562c;
 }
 
 @layer components {
   .input {
-    @apply w-full rounded-md border border-dark-border bg-dark-surface px-4 py-3 text-base text-white outline-none transition-all placeholder:text-muted focus:border-transparent focus:shadow-[0_0_0_2px_#E8FF00];
+    @apply w-full rounded-md border border-dark-border bg-dark-surface px-4 py-3 text-base text-white outline-none transition-all placeholder:text-muted focus:border-transparent focus:shadow-[0_0_0_2px_#A8562C];
+  }
+  .input-light {
+    @apply w-full rounded-md border border-light-border bg-white px-4 py-3 text-base text-body outline-none transition-all placeholder:text-light-muted focus:border-transparent focus:shadow-[0_0_0_2px_#A8562C];
   }
 }
 

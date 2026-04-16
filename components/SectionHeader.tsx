@@ -18,7 +18,7 @@ export function SectionHeader({
         whileInView={{ x: 0, opacity: 1 }}
         viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.3 }}
-        className={`mb-4 font-mono text-xs uppercase tracking-widest ${onLight ? "text-muted" : "text-accent"}`}
+        className="mb-4 font-mono text-xs uppercase tracking-widest text-accent"
       >
         {label}
       </motion.p>

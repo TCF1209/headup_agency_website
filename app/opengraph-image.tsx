@@ -28,7 +28,7 @@ export default async function OG() {
             alignItems: "center",
             gap: 14,
             fontSize: 22,
-            color: "#E8FF00",
+            color: "#A8562C",
             letterSpacing: "0.18em",
             fontFamily: "monospace",
           }}
@@ -48,7 +48,7 @@ export default async function OG() {
             }}
           >
             <span>Head Up&nbsp;</span>
-            <span style={{ color: "#E8FF00" }}>Agency.</span>
+            <span style={{ color: "#A8562C" }}>Agency.</span>
           </div>
           <div
             style={{
@@ -85,7 +85,7 @@ export default async function OG() {
               style={{
                 width: 12,
                 height: 12,
-                background: "#E8FF00",
+                background: "#A8562C",
                 display: "block",
               }}
             />

@@ -51,7 +51,7 @@ export function VideoCard({
             />
             <div className="absolute inset-0 bg-black/30 transition-colors group-hover:bg-black/50" />
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-accent text-dark-primary shadow-xl transition-transform group-hover:scale-110">
+              <div className="flex h-16 w-16 items-center justify-center rounded-full bg-accent text-white shadow-xl transition-transform group-hover:scale-110">
                 <Play size={24} fill="currentColor" />
               </div>
             </div>

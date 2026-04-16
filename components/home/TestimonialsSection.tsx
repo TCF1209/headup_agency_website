@@ -27,12 +27,12 @@ const PLACEHOLDER = [
 export function TestimonialsSection() {
   const t = useTranslations("home.testimonials");
   return (
-    <section className="relative border-y border-dark-border bg-[#1f1f1f] py-24 md:py-32">
+    <section className="relative border-y border-light-border bg-white py-24 md:py-32">
       <div className="mx-auto max-w-7xl px-6">
-        <SectionHeader label={t("label")} title={t("title")} />
+        <SectionHeader label={t("label")} title={t("title")} onLight />
         <div className="-mx-6 flex gap-6 overflow-x-auto px-6 pb-2 md:mx-0 md:grid md:grid-cols-3 md:overflow-visible md:px-0">
           {PLACEHOLDER.map((p, i) => (
-            <TestimonialCard key={p.name} {...p} index={i} />
+            <TestimonialCard key={p.name} {...p} index={i} onLight />
           ))}
         </div>
       </div>

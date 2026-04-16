@@ -36,7 +36,7 @@ export function WhySection() {
                 <h3 className="font-display text-2xl font-bold leading-tight tracking-tight md:text-3xl">
                   {t(`${r.key}.title`)}
                 </h3>
-                <p className="mt-3 text-base text-muted">
+                <p className="mt-3 text-base text-light-muted">
                   {t(`${r.key}.description`)}
                 </p>
               </div>

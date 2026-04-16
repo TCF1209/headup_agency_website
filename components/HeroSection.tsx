@@ -109,7 +109,7 @@ export function HeroSection() {
           >
             <Link
               href="/book"
-              className="group inline-flex items-center justify-center gap-2 rounded-md bg-accent px-6 py-4 font-mono text-sm font-medium uppercase tracking-wider text-dark-primary transition-all hover:scale-[1.03] hover:bg-accent-muted active:scale-[0.97]"
+              className="group inline-flex items-center justify-center gap-2 rounded-md bg-accent px-6 py-4 font-mono text-sm font-medium uppercase tracking-wider text-white transition-all hover:scale-[1.03] hover:bg-accent-muted active:scale-[0.97]"
             >
               {cta("bookConsultant")}
               <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
