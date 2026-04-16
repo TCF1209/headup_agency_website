@@ -16,7 +16,7 @@ export default function HomePage({
   return (
     <>
       <HeroSection />
-      <TrustedByStrip variant="platforms" />
+      <TrustedByStrip variant="platforms" onLight />
       <ServicesSection />
       <CaseStudiesSection />
       <TestimonialsSection />

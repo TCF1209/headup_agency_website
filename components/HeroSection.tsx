@@ -15,19 +15,14 @@ export function HeroSection() {
   const parts = headline.split(/(<accent>.*?<\/accent>)/g).filter(Boolean);
 
   return (
-    <section className="relative flex min-h-[100dvh] items-center overflow-hidden bg-dark-primary pt-24">
-      <motion.div
-        className="noise pointer-events-none absolute inset-0"
-        animate={{ opacity: [0.3, 0.5, 0.3] }}
-        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+    <section className="relative flex min-h-[100dvh] items-center overflow-hidden bg-light-bg pt-24 text-body">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -right-24 top-1/4 h-[420px] w-[420px] border-2 border-light-border"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-24 top-1/4 h-[420px] w-[420px] border-2 border-dark-border"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute right-32 top-1/2 h-[220px] w-[220px] border border-dark-border"
+        className="pointer-events-none absolute right-32 top-1/2 h-[220px] w-[220px] border border-light-border"
       />
 
       <div className="relative mx-auto grid w-full max-w-7xl gap-16 px-6 pb-20 lg:grid-cols-[1.4fr_1fr] lg:items-center">
@@ -41,7 +36,7 @@ export function HeroSection() {
             {t("label")}
           </motion.p>
 
-          <h1 className="font-display text-[clamp(2.75rem,9vw,9rem)] font-bold leading-[0.92] tracking-tight">
+          <h1 className="font-display text-[clamp(2.75rem,9vw,9rem)] font-bold leading-[0.92] tracking-tight text-dark-primary">
             {parts.map((part, i) => {
               const accentMatch = part.match(/^<accent>(.*?)<\/accent>$/);
               const words = (accentMatch ? accentMatch[1] : part)
@@ -96,7 +91,7 @@ export function HeroSection() {
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.8 }}
-            className="mt-8 max-w-xl text-base text-offwhite md:text-lg"
+            className="mt-8 max-w-xl text-base text-light-muted md:text-lg"
           >
             {t("subheading")}
           </motion.p>
@@ -116,16 +111,16 @@ export function HeroSection() {
             </Link>
             <Link
               href="/solutions"
-              className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-white/80 px-6 py-4 font-mono text-sm font-medium uppercase tracking-wider text-white transition-colors hover:text-dark-primary"
+              className="group relative inline-flex items-center justify-center overflow-hidden rounded-md border border-dark-primary px-6 py-4 font-mono text-sm font-medium uppercase tracking-wider text-dark-primary transition-colors hover:text-white"
             >
-              <span className="absolute inset-0 origin-left scale-x-0 bg-white transition-transform duration-200 group-hover:scale-x-100" />
+              <span className="absolute inset-0 origin-left scale-x-0 bg-dark-primary transition-transform duration-200 group-hover:scale-x-100" />
               <span className="relative">{cta("viewWork")}</span>
             </Link>
           </motion.div>
 
-          <div className="mt-16 inline-flex items-center border border-dark-border bg-dark-surface px-4 py-2">
+          <div className="mt-16 inline-flex items-center rounded-md border border-light-border bg-light-surface px-4 py-2">
             <span className="mr-2 h-2 w-2 bg-accent" />
-            <span className="font-mono text-xs tracking-wider text-offwhite">
+            <span className="font-mono text-xs tracking-wider text-body">
               Specialising in F&amp;B
             </span>
           </div>
@@ -201,13 +196,13 @@ function StatCard({
   accent?: boolean;
 }) {
   return (
-    <div className="border-l-2 border-dark-border bg-dark-surface/60 px-6 py-5">
+    <div className="border-l-2 border-accent bg-light-surface px-6 py-5 shadow-sm">
       <div
-        className={`font-display text-4xl font-bold tracking-tight md:text-5xl ${accent ? "text-accent" : "text-white"}`}
+        className={`font-display text-4xl font-bold tracking-tight md:text-5xl ${accent ? "text-accent" : "text-dark-primary"}`}
       >
         {value}
       </div>
-      <div className="mt-2 font-mono text-xs uppercase tracking-widest text-muted">
+      <div className="mt-2 font-mono text-xs uppercase tracking-widest text-light-muted">
         {label}
       </div>
     </div>
