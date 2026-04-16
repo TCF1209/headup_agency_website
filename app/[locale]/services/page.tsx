@@ -304,11 +304,11 @@ function ServiceHero({
         <div className="relative aspect-[21/9] w-full overflow-hidden rounded-md border border-light-border bg-light-surface">
           <div
             aria-hidden
-            className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 border-2 border-light-border"
+            className="pointer-events-none absolute -right-16 -top-16 hidden h-64 w-64 border-2 border-light-border md:block"
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute -left-12 bottom-8 h-40 w-40 border border-accent/30"
+            className="pointer-events-none absolute -left-12 bottom-8 hidden h-40 w-40 border border-accent/30 md:block"
           />
           <div className="relative flex h-full flex-col items-center justify-center gap-8 px-8">
             <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-light-muted">

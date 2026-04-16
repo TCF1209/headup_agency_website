@@ -18,11 +18,11 @@ export function HeroSection() {
     <section className="relative flex min-h-[100dvh] items-center overflow-hidden bg-light-bg pt-24 text-body">
       <div
         aria-hidden
-        className="pointer-events-none absolute -right-24 top-1/4 h-[420px] w-[420px] border-2 border-light-border"
+        className="pointer-events-none absolute -right-24 top-1/4 hidden h-[420px] w-[420px] border-2 border-light-border lg:block"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute right-32 top-1/2 h-[220px] w-[220px] border border-light-border"
+        className="pointer-events-none absolute right-32 top-1/2 hidden h-[220px] w-[220px] border border-light-border lg:block"
       />
 
       <div className="relative mx-auto grid w-full max-w-7xl gap-16 px-6 pb-20 lg:grid-cols-[1.4fr_1fr] lg:items-center">
